@@ -10,5 +10,8 @@ router.get('/', postsController.index);
 // importazione show
 router.get('/:slug', postsController.show);
 
+// importazione store
+router.post('/', postsController.store);
+
 // esportazione
 module.exports = router;
