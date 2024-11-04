@@ -9,4 +9,39 @@ axios.get('http://localhost:3000/posts')
     .then(response => {
         let posts = response.data.data;
         console.log(posts);
+
+        // ciclo nell'array db
+        posts.forEach(post => {
+            
+            // destrutturazione oggetto
+            const {title, slug, content, image, tags} = post;
+
+            // creazione markup
+            const markup = `
+            <ul>
+                <li>
+                    <div class="card-title">
+                        ${title}
+                    </div>
+                    <div class="card-img">
+                        <img src="${image}" alt="">
+                        <div class="card-desc">
+                            ${content}
+                        </div>
+                        <div class="card-tags">
+                            ${tags}
+                        </div>
+                    </div>
+                </li>
+            </ul>`;
+
+            // assegnazione markup
+            postElements += markup;
+        });
+
+        // stampa markup
+        rowElement.innerHTML = postElements;
+    })
+    .catch(err => {
+        console.error(err);
     })
