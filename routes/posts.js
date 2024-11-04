@@ -7,5 +7,8 @@ const postsController = require('../controllers/posts-controller.js');
 // importazione index
 router.get('/', postsController.index);
 
+// importazione show
+router.get('/:slug', postsController.show);
+
 // esportazione
 module.exports = router;
