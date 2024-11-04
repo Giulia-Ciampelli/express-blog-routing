@@ -12,6 +12,7 @@
 
 // #region variabili d'importazione
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const HOST = process.env.HOST;
 const PORT = process.env.PORT;
@@ -25,6 +26,9 @@ app.use(express.json());
 app.listen(PORT, (req,res) => {
     console.log(`Server disponibile su: ${HOST}:${PORT}`);
 })
+
+// uso di cors su tutte le rotte
+app.use(cors());
 
 // importazione prima rotta
 app.get('/', (req,res) => {
