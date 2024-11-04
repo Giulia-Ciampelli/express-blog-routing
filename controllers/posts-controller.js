@@ -15,7 +15,7 @@ const index = (req, res) => {
 // creazione show
 const show = (req, res) => {
     const post = posts.find(post => post.slug === (req.params.slug));
-
+    
     // condizioni per ritorno
     if(!post) {
         return res.status(404).json({

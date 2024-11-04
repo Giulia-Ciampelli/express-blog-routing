@@ -12,7 +12,7 @@ axios.get('http://localhost:3000/posts')
         posts.forEach(post => {
             
             // destrutturazione oggetto
-            const {title, slug, content, image, tags} = post;
+            const {title, content, image, tags} = post;
 
             // creazione markup
             const markup = `
