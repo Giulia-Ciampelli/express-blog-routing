@@ -9,3 +9,15 @@
 // Bonus
 // Creare inoltre un filtro in querystring per tag, che ritorna in formato json tutti i post che hanno quei tag
 // Aggiungi il metodo store per la creazione di un nuovo post
+
+// #region variabili d'importazione
+const express = require('express');
+const app = express();
+const HOST = process.env.HOST;
+const PORT = process.env.PORT;
+// #endregion variabili d'importazione
+
+// impostazione iniziale server
+app.listen(PORT, (req,res) => {
+    console.log(`Server disponibile su: ${HOST}:${PORT}`);
+})
