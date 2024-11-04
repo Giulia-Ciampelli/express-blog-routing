@@ -1,4 +1,3 @@
-console.log('im alive');
 // #region variabili globali
 let rowElement = document.querySelector('.row');
 let postElements = '';
@@ -8,7 +7,6 @@ let postElements = '';
 axios.get('http://localhost:3000/posts')
     .then(response => {
         let posts = response.data.data;
-        console.log(posts);
 
         // ciclo nell'array db
         posts.forEach(post => {
@@ -20,16 +18,20 @@ axios.get('http://localhost:3000/posts')
             const markup = `
             <ul>
                 <li>
-                    <div class="card-title">
-                        ${title}
-                    </div>
-                    <div class="card-img">
-                        <img src="${image}" alt="">
-                        <div class="card-desc">
-                            ${content}
+                    <div class="card">
+                        <div class="card-title">
+                            ${title}
                         </div>
-                        <div class="card-tags">
-                            ${tags}
+                        <div class="card-img">
+                            <img src="${image}" alt="">
+                            <div class="card-desc">
+                                ${content}
+                            </div>
+                            <div class="card-tags">
+                                <p>
+                                    Tags: ${tags}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </li>
