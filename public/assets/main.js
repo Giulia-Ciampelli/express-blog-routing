@@ -23,7 +23,7 @@ axios.get('http://localhost:3000/posts')
                             ${title}
                         </div>
                         <div class="card-img">
-                            <img src="${image}" alt="">
+                            <img src="/assets/imgs/posts/${image}" alt="">
                             <div class="card-desc">
                                 ${content}
                             </div>

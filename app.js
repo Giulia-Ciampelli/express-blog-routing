@@ -28,3 +28,6 @@ app.get('/', (req,res) => {
 
 // importazione rotte
 app.use('/posts', postsRouter);
+
+// assets statici
+app.use(express.static('public'));
